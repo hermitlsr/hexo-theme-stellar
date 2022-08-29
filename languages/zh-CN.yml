@@ -3,7 +3,7 @@ btn:
   blog: 文章
   wiki: 智库
   recent_publish: 近期发布
-    all_wiki: 智库
+  all_wiki: 智库
   category: 分类
   categories: 分类
   tag: 标签
