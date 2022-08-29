@@ -4,7 +4,7 @@ function div_default() {
   el += '<article class="md">';
 
   // 封面
-  if (post.cover || theme.article.auto_cover) {
+  if (post.cover || theme.article.auto_cover || theme.article.default_cover.enable) {
     var cover_url;
     if (post.cover != undefined) {
       if (post.cover.includes('/')) {
@@ -12,7 +12,7 @@ function div_default() {
       } else {
         cover_url = 'https://source.unsplash.com/1280x640/?' + post.cover;
       }
-    } else {
+    } else if (theme.article.auto_cover && !theme.article.default_cover.enable) {
       // 自动以 tags 作为关键词搜索封面
       if (post.tags) {
         var params = '';
@@ -26,6 +26,8 @@ function div_default() {
       } else {
         cover_url = 'https://source.unsplash.com/random/1280x640';
       }
+    } else if (theme.article.default_cover.enable) {
+        cover_url = theme.article.default_cover.imgs[Math.floor(Math.random() * theme.article.default_cover.imgs.length)]
     }
     if (cover_url) {
       el += '<div class="post-cover">';

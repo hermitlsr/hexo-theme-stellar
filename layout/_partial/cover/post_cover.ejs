@@ -1,7 +1,7 @@
 <%
 function div() {
   var el = '';
-  if ((page.banner == undefined || page.banner == false) && !theme.article.auto_banner) {
+  if (page.banner == false) {
     return el;
   }
   var url;
@@ -11,7 +11,7 @@ function div() {
     } else {
       url = 'https://source.unsplash.com/2000x400/?' + page.banner;
     }
-  } else {
+  }  else if (theme.article.auto_banner && !theme.article.default_banner.enable) {
     // 自动以 tags 作为关键词搜索封面
     if (page.tags) {
       var params = '';
@@ -25,6 +25,8 @@ function div() {
     } else {
       url = 'https://source.unsplash.com/random/2000x400';
     }
+  } else if (theme.article.default_banner.enable) {
+        url = theme.article.default_banner.imgs[Math.floor(Math.random() * theme.article.default_cover.imgs.length)]
   }
   el += '<div class="l_cover post' + scrollreveal() + '">';
   el += '<div class="cover">';
