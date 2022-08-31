@@ -105,6 +105,15 @@ function layoutDiv() {
       el += '</div>';
       el += '</section>';
     }
+    if (theme.article.donate && page.donate != false) {
+      el += '<section id="donate">';
+      el += '<div class="header">';
+      el += '<span>' + __('meta.donate') + '</span>';
+      el += '<div>';
+      el += '<iframe src="/donate/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>';
+      el += '</div>';
+      el += '</section>';
+    }
   }
 
   el += '</div>';
