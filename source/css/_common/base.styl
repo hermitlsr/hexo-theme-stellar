@@ -13,14 +13,11 @@ a
     color: $color-hover
 
 // md > a
-p, li
-  >a:not([class])
+p:not([class]), li:not([class])
+  a:not([class])
     margin: 0 1px
-    padding: 4px
-    border-radius: 4px
-    &:hover
-      color: darken($color-hover, 10)
-      background: alpha($color-hover, 0.08)
+    padding: 2px
+    text-decoration: underline
 
 hr
   color: var(--text-meta)

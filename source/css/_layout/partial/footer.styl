@@ -34,14 +34,14 @@
 .page-footer .text
   p
     margin: 4px 0
-    line-height: 1.2
-  a
-    text-decoration: none
+    line-height: 1.5
+  a:not([class])
+    text-decoration: underline
     font-weight: 500
     margin: inherit
     padding: inherit
+    &:after
+      display: none
     &:hover
       background: inherit
-
-  img
-    vertical-align: middle
+      color: $color-hover

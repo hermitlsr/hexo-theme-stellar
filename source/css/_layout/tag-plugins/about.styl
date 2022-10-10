@@ -1,10 +1,12 @@
+article.md.content>.tag-plugin.about:first-child
+  margin-top: 0
+
 .tag-plugin.about
   background: var(--block)
-  border-radius: $border-block
-  padding: 2rem
+  border-radius: $border-card
+  padding: 3rem 2rem 2rem
   .about-header
     display flex
-    flex-direction: row-reverse
     justify-content: space-between
     flex-wrap: wrap
     img
@@ -46,10 +48,7 @@
 
 @media screen and (max-width: $device-mobile)
   .tag-plugin.about
-    padding: 1rem
+    padding: 2rem 1rem 1rem
     .about-header
-      flex-direction: column
-      .avatar
-        margin: 1rem auto
       p
         width 100%
