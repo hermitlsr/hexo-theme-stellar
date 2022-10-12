@@ -21,7 +21,7 @@ hexo.extend.tag.register('about', function(args, content) {
   if (args.avatar === undefined) {
      avatar_url = hexo.config.avatar;
   }
-  if (avatar_url) {
+  if (avatar_url && avatar_url != "false") {
     el += '<div class="avatar">'
     el += '<img src="' + avatar_url + '"';
     if (args.height && args.height.length > 0) {
